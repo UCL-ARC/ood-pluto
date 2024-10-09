@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# Benchmark info
+echo "TIMING - Starting main script at: $(date)"
+
+# Set working directory to home directory
+cd "${HOME}"
+
+#
+# Start Julia Pluto Server
+#
+
+<%- unless context.modules.blank? -%>
+source /shared/ucl/apps/modules/5.1.0/init/bash
+
+# Purge the module environment to avoid conflicts
+module purge
+
+# Load the require modules
+module load <%= context.modules %>
+
+# List loaded modules
+module list
+<%- end -%>
+
+module load julia
+
+# Benchmark info
+echo "TIMING - Starting julia at: $(date)"
+
+# Launch the Jupyter Server
+set -x
+JULIA_DEBUG=loading julia --history-file=no <%= context.extra_julia_args %> "${SERVER_SCRIPT}"
+

@@ -1,0 +1,8 @@
+---
+name: Pluto
+category: Interactive Apps
+subcategory: Servers
+role: batch_connect
+icon: icon.svg
+description: |
+    This app will launch a Pluto server (a Julia-based notebook system) on one or more nodes.

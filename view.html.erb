@@ -1,0 +1,11 @@
+<% if false %>
+        <%# original form line %>
+        <form action="/node/<%= host %>/<%= port %>/login" method="post" target="_blank">
+<% end %>
+<p><strong>Note:</strong> there is currently no way to shut down a Pluto session from within Pluto. Please Cancel your session from here when you have finished with it.</p>
+<form action="/node/<%= host %>/<%= port %>/?secret=<%= password %>" method="get" target="_blank">
+  <input type="hidden" name="secret" value="<%= password %>">
+  <button class="btn btn-primary" type="submit">
+    <i class="fa fa-eye"></i> Connect to Pluto
+  </button>
+</form>
