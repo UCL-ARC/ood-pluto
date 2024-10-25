@@ -46,6 +46,9 @@ export SERVER_SCRIPT="${PWD}/script.jl"
 (
 umask 077
 cat > "${SERVER_SCRIPT}" << EOL
+# Switch to an env labelled with the Julia version
+Pkg.activate(string("ood-pluto-jlv", VERSION.major, ".", VERSION.minor); shared=true)
+
 try
     import Pluto
 catch
