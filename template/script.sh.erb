@@ -29,6 +29,5 @@ module load julia
 echo "TIMING - Starting julia at: $(date)"
 
 # Launch the Jupyter Server
-set -x
 JULIA_DEBUG=loading julia --history-file=no <%= context.extra_julia_args %> "${SERVER_SCRIPT}"
 

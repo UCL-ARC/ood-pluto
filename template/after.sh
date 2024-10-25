@@ -1,5 +1,4 @@
 # Wait for the Pluto server to start
-set -x
 echo "Waiting for Pluto server to open port ${port}..."
 echo "TIMING - Starting wait at: $(date)"
 if wait_until_port_used "${host}:${port}" 240; then
